@@ -19,9 +19,9 @@
 - VPS: service is active; recent memory use was about 64 MiB; memory cap 512 MiB, CPU quota 50%, task limit 64; no new inbound port is open.
 - GitHub Actions: [tests passed](https://github.com/devggchel/backportguard/actions/runs/29771124458) on GitHub.
 
-## GitHub App and remaining manual work
+## GitHub App
 
-GitHub App is not registered. `github-app-manifest.json` is prepared with the required minimum permissions (Metadata is always read-only for GitHub Apps; Contents and Pull requests read-only; Issues read/write), the Pull request event, and webhook URL `https://api.backportguard.space/webhooks/github`. Register and install the App after the DNS delegation becomes active.
+GitHub App is registered and installed only for `devggchel/backportguard`. It has the required minimum permissions (Metadata is always read-only for GitHub Apps; Contents and Pull requests read-only; Issues read/write), the Pull request event, and webhook URL `https://api.backportguard.space/webhooks/github`. The installation token was verified without exposing credentials; a signed non-mutating webhook check returned HTTP 202.
 
 ## Created resources and removal
 
