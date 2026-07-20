@@ -1,0 +1,27 @@
+[Unit]
+Description=BackportGuard webhook and Cloudflare Tunnel
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=backportguard
+Group=backportguard
+WorkingDirectory=/opt/backportguard
+EnvironmentFile=/etc/backportguard/backportguard.env
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/opt/backportguard/.venv/bin/python -m backportguard.run
+Restart=on-failure
+RestartSec=5
+MemoryMax=512M
+CPUQuota=50%
+TasksMax=64
+NoNewPrivileges=yes
+PrivateTmp=yes
+ProtectSystem=strict
+ProtectHome=yes
+ReadWritePaths=/var/lib/backportguard
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target
