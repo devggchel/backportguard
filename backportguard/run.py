@@ -9,13 +9,18 @@ import time
 
 
 def main() -> int:
-    token = os.environ.get("CLOUDFLARE_TUNNEL_TOKEN")
+    token = os.environ.pop("CLOUDFLARE_TUNNEL_TOKEN", None)
     command = [sys.executable, "-m", "uvicorn", "backportguard.main:app", "--host", "127.0.0.1", "--port", os.environ.get("PORT", "8765")]
     app = subprocess.Popen(command)
     tunnel: subprocess.Popen | None = None
     if token:
         binary = os.environ.get("CLOUDFLARED_BIN", "/opt/backportguard/bin/cloudflared")
-        tunnel = subprocess.Popen([binary, "tunnel", "--no-autoupdate", "run", "--token", token])
+        tunnel_environment = os.environ.copy()
+        tunnel_environment["TUNNEL_TOKEN"] = token
+        tunnel = subprocess.Popen(
+            [binary, "tunnel", "--no-autoupdate", "run"],
+            env=tunnel_environment,
+        )
 
     def stop(_signum: int, _frame: object) -> None:
         for process in (tunnel, app):
