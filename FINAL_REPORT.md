@@ -21,7 +21,7 @@
 
 ## GitHub App and remaining manual work
 
-GitHub App is not registered. `github-app-manifest.json` is prepared with the required minimum permissions (Metadata is always read-only for GitHub Apps; Contents and Pull requests read-only; Issues read/write) and the Pull request event. Add a neutral public hostname to the existing healthy Tunnel, targeting `http://127.0.0.1:8765`, then use that hostname in the manifest's webhook URL before registering and installing the App.
+GitHub App is not registered. `github-app-manifest.json` is prepared with the required minimum permissions (Metadata is always read-only for GitHub Apps; Contents and Pull requests read-only; Issues read/write) and the Pull request event. The free hostname registration is pending review in [is-a.dev PR #44339](https://github.com/is-a-dev/register/pull/44339); after it is merged, point the existing healthy Tunnel at `backportguard.is-a.dev` → `http://127.0.0.1:8765`, then use that hostname in the manifest before registering and installing the App.
 
 ## Created resources and removal
 
