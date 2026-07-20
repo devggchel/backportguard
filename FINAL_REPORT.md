@@ -11,12 +11,12 @@
 
 - GitHub: https://github.com/devggchel/backportguard
 - Website: https://backportguard.space/ (Cloudflare Pages; `https://backportguard.pages.dev/` remains available)
-- Application: https://api.backportguard.space/health — Cloudflare Tunnel route is configured; DNS delegation from the registrar was still propagating when this report was updated. The loopback health endpoint remains `http://127.0.0.1:8765/health` on the VPS.
+- Application: https://api.backportguard.space/health — public health check returns `{"status":"ok"}` through the healthy Cloudflare Tunnel. The loopback health endpoint remains `http://127.0.0.1:8765/health` on the VPS.
 
 ## Verification
 
 - Local: `python -m pytest -q` — 4 passed; HTTP health check passed; Git-tracked files were checked for credentials.
-- VPS: service is active; memory cap 512 MiB, CPU quota 50%, task limit 64; no new inbound port is open.
+- VPS: service is active; recent memory use was about 64 MiB; memory cap 512 MiB, CPU quota 50%, task limit 64; no new inbound port is open.
 - GitHub Actions: [tests passed](https://github.com/devggchel/backportguard/actions/runs/29771124458) on GitHub.
 
 ## GitHub App and remaining manual work
