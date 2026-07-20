@@ -5,7 +5,7 @@
 - BackportGuard 0.1.0 is installed and active on the VPS as `backportguard.service`.
 - FastAPI listens only on `127.0.0.1:8765`; `GET /health` returns `{"status":"ok"}`.
 - Source includes HMAC verification, 1 MiB request limit, safe YAML parsing, SQLite delivery deduplication, GitHub Issue creation, tests, documentation, Apache-2.0 licence, and GitHub Actions workflow.
-- Deployed source revision: `aa41df3` (package version `0.1.0`); local annotated release tag: `v0.1.0` (`d0d9e10`).
+- Deployed source revision: `aa41df3` (package version `0.1.0`); public release `v0.1.0` was published after the successful test workflow.
 
 ## Links
 
@@ -17,7 +17,7 @@
 
 - Local: `python -m pytest -q` — 4 passed; HTTP health check passed; Git-tracked files were checked for credentials.
 - VPS: service is active; memory cap 512 MiB, CPU quota 50%, task limit 64; no new inbound port is open.
-- GitHub Actions: workflow is included; its first run is checked after the initial push.
+- GitHub Actions: [tests passed](https://github.com/devggchel/backportguard/actions/runs/29771124458) on GitHub.
 
 ## GitHub App and remaining manual work
 
