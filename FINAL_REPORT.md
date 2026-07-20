@@ -11,7 +11,7 @@
 
 - GitHub: https://github.com/devggchel/backportguard
 - Cloudflare Pages: https://backportguard.pages.dev/
-- Application: `http://127.0.0.1:8765/health` on the VPS; Cloudflare Tunnel is healthy but has no public hostname yet.
+- Application: https://backportguard.space/health — Cloudflare Tunnel route is configured; DNS delegation from the registrar was still propagating when this report was updated. The loopback health endpoint remains `http://127.0.0.1:8765/health` on the VPS.
 
 ## Verification
 
@@ -21,7 +21,7 @@
 
 ## GitHub App and remaining manual work
 
-GitHub App is not registered. `github-app-manifest.json` is prepared with the required minimum permissions (Metadata is always read-only for GitHub Apps; Contents and Pull requests read-only; Issues read/write) and the Pull request event. A stable Tunnel hostname must be a DNS record in the same Cloudflare account as the Tunnel; add a neutral dedicated domain or zone, then point it to `http://127.0.0.1:8765` before registering and installing the App.
+GitHub App is not registered. `github-app-manifest.json` is prepared with the required minimum permissions (Metadata is always read-only for GitHub Apps; Contents and Pull requests read-only; Issues read/write), the Pull request event, and webhook URL `https://backportguard.space/webhooks/github`. Register and install the App after the DNS delegation becomes active.
 
 ## Created resources and removal
 
