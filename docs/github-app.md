@@ -4,12 +4,12 @@ BackportGuard needs a GitHub App rather than a personal access token in producti
 
 ## Required settings
 
-Use `github-app-manifest.json` as the starting point, then replace `YOUR-BACKPORTGUARD-HOST` with the dedicated public Tunnel hostname.
+Use `github-app-manifest.json` as the starting point for the GitHub App registration.
 
 | Setting | Value |
 | --- | --- |
-| Homepage URL | `https://backportguard.pages.dev/` |
-| Webhook URL | `https://backportguard.space/webhooks/github` |
+| Homepage URL | `https://backportguard.space/` |
+| Webhook URL | `https://api.backportguard.space/webhooks/github` |
 | Webhook event | Pull request |
 | Metadata | Read-only (always required by GitHub Apps) |
 | Contents | Read-only |

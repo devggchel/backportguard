@@ -1,10 +1,10 @@
 {
   "name": "BackportGuard",
-  "url": "https://backportguard.pages.dev/",
+  "url": "https://backportguard.space/",
   "description": "Free, open-source GitHub backport reminder service.",
   "public": false,
   "hook_attributes": {
-    "url": "https://backportguard.space/webhooks/github",
+    "url": "https://api.backportguard.space/webhooks/github",
     "active": true
   },
   "default_permissions": {

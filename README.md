@@ -8,7 +8,7 @@
 
 BackportGuard is a free, open-source GitHub webhook service. When a pull request is merged with the configured `backport` label, it reads a small policy file from that merge commit and creates one clear issue reminding the team which maintained branches need review.
 
-[Project site](https://backportguard.pages.dev/) · [Installation](#production) · [Security](SECURITY.md) · [Contributing](CONTRIBUTING.md)
+[Project site](https://backportguard.space/) · [Installation](#production) · [Security](SECURITY.md) · [Contributing](CONTRIBUTING.md)
 
 ## What it does
 
