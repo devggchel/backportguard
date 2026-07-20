@@ -9,7 +9,7 @@ Use `github-app-manifest.json` as the starting point, then replace `YOUR-BACKPOR
 | Setting | Value |
 | --- | --- |
 | Homepage URL | `https://backportguard.pages.dev/` |
-| Webhook URL | `https://YOUR-BACKPORTGUARD-HOST/webhooks/github` |
+| Webhook URL | `https://backportguard.space/webhooks/github` |
 | Webhook event | Pull request |
 | Metadata | Read-only (always required by GitHub Apps) |
 | Contents | Read-only |

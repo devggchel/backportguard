@@ -4,7 +4,7 @@
   "description": "Free, open-source GitHub backport reminder service.",
   "public": false,
   "hook_attributes": {
-    "url": "https://YOUR-BACKPORTGUARD-HOST/webhooks/github",
+    "url": "https://backportguard.space/webhooks/github",
     "active": true
   },
   "default_permissions": {
