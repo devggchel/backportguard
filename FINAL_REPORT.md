@@ -5,7 +5,7 @@
 - BackportGuard 0.1.0 is installed and active on the VPS as `backportguard.service`.
 - FastAPI listens only on `127.0.0.1:8765`; `GET /health` returns `{"status":"ok"}`.
 - Source includes HMAC verification, 1 MiB request limit, safe YAML parsing, SQLite delivery deduplication, GitHub Issue creation, tests, documentation, Apache-2.0 licence, and GitHub Actions workflow.
-- Local release commit: `d0d9e10`; local annotated tag: `v0.1.0`.
+- Deployed source revision: `5c6da55` (package version `0.1.0`); local annotated release tag: `v0.1.0` (`d0d9e10`).
 
 ## Links
 
