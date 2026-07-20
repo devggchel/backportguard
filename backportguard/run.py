@@ -5,6 +5,7 @@ import os
 import signal
 import subprocess
 import sys
+import time
 
 
 def main() -> int:
@@ -23,11 +24,17 @@ def main() -> int:
 
     signal.signal(signal.SIGTERM, stop)
     signal.signal(signal.SIGINT, stop)
-    status = app.wait()
-    stop(0, None)
-    if tunnel:
-        tunnel.wait(timeout=15)
-    return status
+    while True:
+        if app.poll() is not None:
+            stop(0, None)
+            if tunnel:
+                tunnel.wait(timeout=15)
+            return app.returncode
+        if tunnel and tunnel.poll() is not None:
+            stop(0, None)
+            app.wait(timeout=15)
+            return tunnel.returncode or 1
+        time.sleep(1)
 
 
 if __name__ == "__main__":
